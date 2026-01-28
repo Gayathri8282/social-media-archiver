@@ -1,11 +1,11 @@
-📌 Social Media Image & Metadata Archiving Pipeline
+Social Media Image & Metadata Archiving Pipeline
 Overview
 
 This project implements an automated ETL pipeline to archive public social media images and metadata. The pipeline fetches recent posts, stores images in cloud storage (AWS S3), enriches metadata using basic NLP sentiment analysis, and persists structured data in a PostgreSQL database.
 
 The system is designed with scalability, fault tolerance, and real-world data engineering practices in mind.
 
-🧱 Architecture
+Architecture
 (Mock Social Media Source)
         |
         v
@@ -31,7 +31,7 @@ boto3 – AWS SDK
 
 psycopg2 – PostgreSQL client
 
-📌 Platform Choice & Data Source Justification
+Platform Choice & Data Source Justification
 
 The initial design targeted Instagram and Twitter/X, as specified in the task requirements. However, during implementation, both platforms presented access limitations that impacted real-time ingestion of public content within the given timeline.
 
@@ -45,7 +45,7 @@ Subsequently, the pipeline was integrated with the YouTube Data API v3, which pr
 
 The final implementation demonstrates a production-style, platform-agnostic ETL pipeline. The data ingestion layer can be swapped with Instagram or Twitter APIs once appropriate access is approved, without requiring changes to downstream components such as cloud storage, database schema, or orchestration.
 
-🔄 Data Pipeline Flow
+Data Pipeline Flow
 
 Fetch recent public post data (mocked source due to API constraints)
 
@@ -90,7 +90,7 @@ Due to strict access limitations and credit restrictions on public social media 
 
 The pipeline is API-agnostic by design — the mock client can be replaced with any approved public API client without changing downstream logic.
 
-🔐 Security & Ethics
+Security & Ethics
 
 All credentials are stored securely using environment variables
 
@@ -100,7 +100,7 @@ No personal user data is analyzed or deanonymized
 
 The project is strictly non-commercial and academic
 
-🚀 Future Improvements
+Future Improvements
 
 Replace mock source with approved live APIs
 
@@ -110,6 +110,6 @@ Extend NLP with topic modeling or keyword extraction
 
 Add monitoring and logging (CloudWatch)
 
-✅ Conclusion
+Conclusion
 
 This project demonstrates a production-style data engineering pipeline combining cloud infrastructure, structured storage, and NLP enrichment. It reflects real-world considerations such as API limitations, scalability, and ethical data handling.
